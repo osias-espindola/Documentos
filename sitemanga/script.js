@@ -55,8 +55,7 @@ async function displayManga(data) {
       <h2>${manga.title}</h2>
       <img src="${mangaImage.src}" alt="${mangaImage.alt}">
       <p>Author: ${manga.authors?.[0].name || 'Author Not Available'}</p>
-      <p>Genres: ${manga.genres?.map(genre => genre.name).join(', ') || 'Genres Not Available'}</p>
-      <p>Summary: ${manga.synopsis || 'Summary Not Available'}</p>`;
+      <p>Genres: ${manga.genres?.map(genre => genre.name).join(', ') || 'Genres Not Available'}</p>`;
 
     mangaList.appendChild(mangaItem);
   });
