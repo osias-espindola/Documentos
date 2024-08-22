@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");/*Cela importe la police « Poppins » de Google Fonts, ce qui la rend disponible pour une utilisation dans les styles.*/
+
+/*Cela réinitialise la marge et le remplissage par défaut pour tous les éléments et définit la propriété box-sizing sur border-box pour inclure le remplissage et la bordure dans la largeur et la hauteur totales de l’élément.*/
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Cela supprime les contours du focus par défaut et appuyez sur la couleur de surbrillance pour les éléments ciblés et actifs. */
+*:focus,*:active {
+outline: none !important;
+-webkit-tap-highlight-color: transparent;
+}
+
+/* Style HTML et corps */
+html, /**/
+body {
+display: grid;/* Utilise la disposition en grille.*/
+height: 100vh;/*Définit la hauteur à 100% de la hauteur de la fenêtre d’affichage.*/
+width: 100%;/*Définit la largeur à 100% de la largeur de la fenêtre d’affichage.*/
+font-family: "Poppins", sans-serif;/*Définit la famille de polices sur.*/
+place-items: center;/* Centre les éléments horizontalement et verticalement.*/
+background: linear-gradient(315deg, #8f3636, #d7e1ec);/*Définit un arrière-plan de dégradé linéaire.*/
+}
+
+.wrapper {
+display: inline-flex;/*Cela définit le wrapper pour qu’il utilise la disposition flexbox en ligne.*/
+}
+
+/*  Icônes de style */
+.wrapper .icon {
+position: relative; /* positionne l’icône par rapport à sa position normale.*/
+background: #ffffff;/*Définit la couleur d’arrière-plan sur blanc.*/
+border-radius: 50%;/*Rend l’icône circulaire.*/
+padding: 15px;/*Ajoute un rembourrage à l’intérieur de l’icône.*/
+margin: 10px;/*Ajoute une marge autour de l’icône.*/
+width: 50px;/* définit les dimensions de l’icône.*/
+height: 50px; /*définit les dimensions de l’icône.*/
+font-size: 18px;/*Définit la taille de la police.*/
+display: flex;/*Utilise la disposition flexbox.*/
+justify-content: center;/*Centre le contenu horizontalement.*/
+align-items: center;/*Centre le contenu verticalement.*/
+flex-direction: column;/*aligne le contenu dans une colonne.*/
+box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);/*Ajoute une ombre.*/
+cursor: pointer;/*transforme le curseur en pointeur.*/
+/*Ajoute un effet de transition pour les animations.*/
+transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+-webkit-transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-moz-transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-ms-transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-o-transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* 7. Infobulles de style*/
+.wrapper .tooltip {
+position: absolute;/* positionne l’info-bulle de manière absolue.*/
+top: 0;/* Positionne l’info-bulle en haut.*/
+font-size: 14px;/*Définit la taille de la police.*/
+background: #fff;/*Définit la couleur d’arrière-plan sur blanc.*/
+color: #ffffff;/*Définit la couleur du texte sur blanc (bien qu’elle ne soit pas visible sur un fond blanc).*/
+padding: 5px 8px;/*Ajoute un rembourrage à l’intérieur de l’infobulle.*/
+box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);/*Ajoute une ombre.*/
+opacity: 0;/*rend l’infobulle initialement invisible. */
+pointer-events: none;/*Désactive les événements de pointeur.*/
+border-radius: 4px;/*Arrondit les coins.*/
+transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-ms-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-o-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+}
+
+/*Flèche d’info-bulle de style*/
+.wrapper .tooltip::before {
+position: absolute; /*positionne la flèche de manière absolue.*/
+content: "";/*Crée un pseudo-élément.*/
+height: 8px;/*définit les dimensions de la flèche.*/
+width: 8px;/*définit les dimensions de la flèche.*/
+background: #fff;/*Définit la couleur d’arrière-plan.*/
+bottom: -3px;/* Positionne la flèche en bas.*/
+left: 50%;/*Centre la flèche horizontalement.*/
+transform: translate(-50%) rotate(45deg);/*Déplace la flèche à la bonne position et la fait pivoter.*/
+/**/
+transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-webkit-transform: translate(-50%) rotate(45deg);
+-moz-transform: translate(-50%) rotate(45deg);
+-ms-transform: translate(-50%) rotate(45deg);
+-o-transform: translate(-50%) rotate(45deg);
+-webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-moz-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-ms-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+-o-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/*Effets de survol pour l’infobulle*/
+.wrapper .icon:hover .tooltip {
+top: -45px;/*Déplace l’infobulle vers le haut au survol.*/
+opacity: 1;/*Rend l’infobulle visible.*/
+visibility: visible;/*Garantit que l’info-bulle est visible.*/
+pointer-events: auto;/*Active les événements de pointeur.*/
+}
+
+/*Effets de survol pour l’ombre du texte de l’icône*/
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.01); /*Ajoute une légère ombre de texte à la portée et au texte de l’info-bulle au survol.*/
+}
+
+/*Effets de survol pour des icônes spécifiques*/
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+background: #3b5999;
+color: #fff;
+}
+
+.wrapper .new-twitter:hover,
+.wrapper .new-twitter:hover .tooltip,
+.wrapper .new-twitter:hover .tooltip::before {
+background: #000000ec;
+color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+background: #e1306c;
+color: #fff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+background: #333333;
+color: #fff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+background: #e92828;
+color: #fff;
+}
